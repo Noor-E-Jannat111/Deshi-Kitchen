@@ -1,0 +1,85 @@
+.opening-hour {
+  @include padding-big;
+
+  background-color: var(--color-primary);
+  color: var(--color-white);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  grid-gap: 2rem;
+  justify-items: center;
+  font-size: 1.4rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  }
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__time {
+    h3 {
+      font-size: 2rem;
+      @include margin-vsmall;
+    }
+
+    ul {
+      li {
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+
+  &__contact {
+    h3 {
+      font-size: 2rem;
+      @include margin-vsmall;
+    }
+
+    p {
+      padding: 2rem 0;
+    }
+    .phone {
+      font-size: 2.4rem;
+      font-weight: 700;
+      padding: 0;
+    }
+  }
+
+  &__newsletter {
+    h3 {
+      font-size: 2rem;
+      @include margin-vsmall;
+    }
+
+    p {
+      padding: 2rem 0;
+    }
+
+    form {
+      height: 4rem;
+      background: var(--color-white);
+      width: 25rem;
+      border-radius: 4rem;
+      font-size: 1.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      input {
+        background: none;
+        border: none;
+        outline: none;
+        margin-left: 1rem;
+      }
+
+      a {
+        color: var(--color-primary);
+        font-size: 4rem;
+      }
+    }
+  }
+}

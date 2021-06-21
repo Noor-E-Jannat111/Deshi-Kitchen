@@ -1,0 +1,46 @@
+.about-our-story {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  @include padding-big;
+  align-items: center;
+
+  &-left {
+    grid-column: 1 / 2;
+    @include padding-medium;
+    width: 90%;
+
+    @media (max-width: 600px) {
+      grid-column: 1 / -1;
+    }
+
+    &__details {
+      font-size: 1.6rem;
+      color: var(--color-grey);
+      @include margin-small;
+    }
+  }
+
+  &-right {
+    grid-column: 2 / -1;
+    @include padding-medium;
+
+    @media (max-width: 600px) {
+      grid-column: 1 / -1;
+    }
+
+    &__img {
+      width: 80%;
+      text-align: center;
+
+      @media (max-width: 600px) {
+        width: 90%;
+      }
+
+      img {
+        width: 100%;
+        @include boxshadow;
+      }
+    }
+  }
+}

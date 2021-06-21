@@ -1,0 +1,137 @@
+.about-us {
+  &-items {
+    font-size: 1.6rem;
+    display: grid;
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    justify-items: center;
+    text-align: center;
+    grid-gap: 2rem;
+    margin: 1rem;
+    margin-top: 3rem;
+
+    @media (max-width: 900px) {
+      display: grid;
+    }
+
+    &__box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &--img {
+        height: 9rem;
+        width: 9rem;
+        text-align: center;
+        margin-bottom: 1rem;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  &-main {
+    @include padding-big;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media (max-width: 900px) {
+      grid-template-columns: 4fr 6fr;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    &-left__text {
+      @include padding-medium;
+      grid-column: 1 / 2;
+
+      @media (max-width: 768px) {
+        grid-column: 1 / -1;
+      }
+
+      &-grey {
+        @include headertext;
+        text-align: left;
+        line-height: 3;
+      }
+
+      &-details {
+        font-size: 1.5rem;
+        @include margin-small;
+      }
+
+      &-box {
+        @include autofit;
+        @include padding-small;
+
+        &--insider {
+          display: flex;
+          align-items: center;
+
+          span {
+            font-size: 4rem;
+            margin-right: 3rem;
+
+            @media (max-width: 900px) {
+              font-size: 3rem;
+              margin-right: 1rem;
+            }
+          }
+
+          p {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+
+    &-right {
+      grid-column: 2 / 3;
+
+      @media (max-width: 768px) {
+        grid-column: 1 / -1;
+      }
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      @media (max-width: 600px) {
+        flex-direction: column;
+      }
+
+      &__figure {
+        width: 45%;
+        height: 80%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          @include boxshadow;
+        }
+        /*
+        @media (max-width: 600px) {
+          width: 80%;
+          height: 100%;
+        }*/
+      }
+
+      &__figure--1st {
+        transform: translateY(-2rem);
+      }
+
+      &__figure--2nd {
+        transform: translateY(2rem);
+      }
+    }
+  }
+}

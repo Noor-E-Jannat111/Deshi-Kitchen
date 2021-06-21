@@ -1,0 +1,66 @@
+.from-blog {
+  @include padding-big;
+
+  &__heading {
+    text-align: center;
+  }
+
+  &__text {
+    @include headertext;
+  }
+
+  &__element {
+    @include padding-medium;
+    @include autofit;
+    grid-gap: 4rem;
+    justify-items: center;
+
+    &-box {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      &:hover &--details {
+        background-color: var(--color-primary);
+      }
+
+      &:hover &--details p,
+      &:hover &--details h3 {
+        color: var(--color-white);
+      }
+
+      &--img {
+        width: 100%;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &--details {
+        position: absolute;
+        width: 90%;
+        bottom: -4rem;
+        right: 0;
+        padding: 1.5rem;
+        background-color: var(--color-white);
+        border-radius: 0.7rem;
+        transition: 0.4s;
+        cursor: pointer;
+
+        p {
+          font-size: 1.5rem;
+          color: var(--color-grey);
+          margin-bottom: 1rem;
+          transition: 0.4s;
+        }
+        h3 {
+          font-size: 1.8rem;
+          transition: 0.4s;
+        }
+      }
+    }
+  }
+}

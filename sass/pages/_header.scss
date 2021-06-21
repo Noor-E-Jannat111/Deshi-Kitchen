@@ -1,0 +1,203 @@
+.header {
+  font-size: 1.6rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url(../img/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: var(--color-white);
+
+  &-info {
+    background-color: rgba(255, 255, 255, 0.06);
+    @include flex;
+    justify-content: space-around;
+    font-size: 1.4rem;
+    font-weight: 300;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    @media (max-width: 768px) {
+      border-bottom: none;
+    }
+
+    &__open {
+      @media (max-width: 600px) {
+        display: none;
+      }
+    }
+  }
+
+  nav.sticky {
+    height: 9rem;
+    background-color: var(--color-primary);
+    top: 0;
+  }
+  &-nav {
+    grid-row: 2 / 3;
+
+    position: fixed;
+    top: 3.1rem;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: thin solid rgba(255, 255, 255, 0.1);
+    transition: 0.5s;
+    z-index: 2;
+    height: 9rem;
+
+    @media (max-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 9rem auto;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__heading {
+      font-size: 2.5rem;
+      padding-left: 3rem;
+
+      @media (max-width: 400px) {
+        font-size: 2rem;
+      }
+
+      @media (max-width: 768px) {
+        grid-column: 1 / 2;
+      }
+    }
+
+    &__ul {
+      padding-right: 5rem;
+
+      @media (max-width: 768px) {
+        grid-column: 1 / -1;
+
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        background-color: var(--color-primary);
+        margin-right: 0;
+        margin: 0;
+        height: 0;
+        overflow: hidden;
+        transition: 0.5s;
+      }
+      li {
+        width: 100%;
+        a {
+          font-family: var(--font-heading);
+          font-weight: 400;
+          color: var(--color-white);
+          transition: 0.4s;
+          padding: 1rem;
+          position: relative;
+
+          @media (max-width: 768px) {
+            display: block;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            background-color: currentColor;
+            transform: scaleX(0);
+            transition: 0.3s;
+
+            @media (max-width: 768px) {
+              display: none;
+            }
+          }
+
+          &:not(:last-child) {
+            padding-right: 1rem;
+          }
+
+          &:first-child::after,
+          &:hover::after {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+  }
+
+  &-details {
+    grid-row: 3 / 4;
+    @include flex;
+
+    &__wrapper {
+      //height: 30rem;
+      @include flex;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+      letter-spacing: 2px;
+
+      span {
+        display: block;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.2);
+
+        span.top {
+          position: absolute;
+          height: 1px;
+          width: 30rem;
+          top: -17rem;
+          right: 0;
+        }
+      }
+
+      i {
+        font-size: 8rem;
+        margin: 0;
+      }
+
+      &--heading {
+        text-shadow: 1px 1px 0 black;
+      }
+
+      p {
+        text-shadow: 1px 1px 0 black;
+      }
+    }
+  }
+
+  &-items {
+    grid-row: 4 / -1;
+
+    @include autofit;
+    margin: 0 1rem;
+    border-top: thin solid rgba(255, 255, 255, 0.1);
+
+    @media (max-width: 900px) {
+      display: none;
+    }
+
+    &__box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &--img {
+        height: 9rem;
+        width: 9rem;
+        text-align: center;
+        margin-bottom: 1rem;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}

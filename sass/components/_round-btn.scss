@@ -1,0 +1,16 @@
+.round-btn {
+  display: inline-block;
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  padding: 1rem 4rem;
+  font-size: 2rem;
+  border: 1px solid currentColor;
+  border-radius: 3.5rem;
+  transition: 0.4s;
+
+  &:hover {
+    border: 1px solid transparent;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+  }
+}

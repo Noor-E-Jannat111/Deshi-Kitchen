@@ -1,0 +1,98 @@
+.grid-container {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr) [center-start] repeat(
+      8,
+      [col-start] minmax(min-content, 18rem) [con-end]
+    )
+    [center-end] minmax(6rem, 1fr) [full-end];
+  grid-template-rows: 100vh min-content;
+
+  @media (max-width: 1200px) {
+    grid-template-columns:
+      [full-start] minmax(1rem, 1fr) [center-start] repeat(
+        8,
+        [col-start] minmax(min-content, 18rem) [con-end]
+      )
+      [center-end] minmax(1rem, 1fr) [full-end];
+    grid-template-columns: [full-start] minmax(1rem, 1fr) [center-start] minmax(
+        min-content,
+        1440px
+      ) [center-end] minmax(1rem, 1fr) [full-end];
+  }
+
+  .header {
+    grid-column: full-start / full-end;
+
+    display: grid;
+    grid-template-rows: 3rem 1fr 4fr 2fr;
+  }
+
+  .about-us {
+    grid-column: center-start / center-end;
+  }
+
+  .about-our-story {
+    grid-column: center-start / center-end;
+  }
+
+  .special-item {
+    grid-column: center-start / center-end;
+  }
+
+  .menu {
+    grid-column: center-start / center-end;
+  }
+
+  .book-a-table {
+    grid-column: full-start / full-end;
+  }
+
+  .order-online {
+    grid-column: full-start / full-end;
+  }
+
+  .our-services {
+    grid-column: center-start / center-end;
+  }
+
+  .our-chef {
+    grid-column: center-start / center-end;
+  }
+
+  .food-video {
+    grid-column: full-start / full-end;
+
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(5, 10vh);
+
+    @media (max-width: 600px) {
+      grid-template-rows: repeat(10, 5vh);
+    }
+  }
+
+  .reviews {
+    grid-column: center-start / center-end;
+  }
+
+  .from-blog {
+    grid-column: center-start / center-end;
+  }
+
+  .gallery {
+    grid-column: center-start / center-end;
+  }
+
+  .feedback {
+    grid-column: full-start / full-end;
+  }
+
+  .opening-hour {
+    grid-column: full-start / full-end;
+  }
+
+  .footer {
+    grid-column: full-start / full-end;
+  }
+}

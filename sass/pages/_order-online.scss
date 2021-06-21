@@ -1,0 +1,100 @@
+.order-online {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../img/order-online.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  @include padding-big;
+  color: var(--color-white);
+
+  &__text {
+    @include headertext;
+    color: var(--color-primary);
+  }
+
+  &__heading {
+    text-align: center;
+    @include margin-small;
+  }
+
+  &__form {
+    width: 70%;
+    margin: 0 auto;
+
+    @media (max-width: 1200px) {
+      width: 70%;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    &-element-holder {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+      grid-gap: 2rem;
+      justify-items: center;
+      @include margin-small;
+
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      }
+
+      .order-online__form-element {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+
+        label {
+          margin-bottom: 1rem;
+        }
+        input {
+          color: var(--color-white);
+          width: 35rem;
+          height: 4.5rem;
+          background: none;
+          border: 2px solid currentColor;
+          outline: none;
+          font-size: 1.8rem;
+          font-family: var(--font-heading);
+
+          @media (max-width: 900px) {
+            width: 30rem;
+          }
+
+          @media (max-width: 768px) {
+            width: 25rem;
+          }
+
+          &:focus {
+            border: 2px solid var(--color-primary);
+            box-shadow: 0 0 0.6rem var(--color-primary);
+          }
+        }
+      }
+    }
+
+    &-link {
+      margin: 0 auto;
+      text-align: center;
+
+      a {
+        box-shadow: 0 0 0.6rem var(--color-primary);
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        transition: 0.4s;
+        border: 2px solid transparent;
+
+        &:hover {
+          background-color: transparent;
+          color: var(--color-primary);
+          border: 2px solid currentColor;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.special-item {
+  @include padding-big;
+  &__heading {
+    margin: 0 auto;
+    text-align: center;
+
+    &--text {
+      @include headertext;
+    }
+  }
+
+  &__items {
+    @include padding-big;
+    @include autofit;
+    justify-items: center;
+    padding-bottom: 0;
+
+    &-box {
+      width: 90%;
+      height: 80%;
+      overflow: hidden;
+      @include boxshadow;
+
+      &:hover img {
+        transform: translateY(-7rem);
+      }
+
+      &:hover p {
+        transform: translateY(-7rem);
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.4s;
+      }
+      p {
+        color: var(--color-grey);
+        font-size: 2rem;
+        transition: 0.4s;
+        text-align: center;
+        padding: 1.8rem 0;
+      }
+    }
+  }
+}

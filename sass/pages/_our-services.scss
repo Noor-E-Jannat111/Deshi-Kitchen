@@ -1,0 +1,41 @@
+.our-services {
+  @include padding-big;
+
+  &__heading {
+    text-align: center;
+  }
+
+  &__text {
+    @include headertext;
+  }
+
+  &__holder {
+    @include autofit;
+    justify-items: center;
+    @include margin-small;
+
+    &-box {
+      max-width: 30rem;
+
+      @include flex;
+      flex-direction: column;
+      @include padding-small;
+
+      &--img {
+        span {
+          font-size: 5rem;
+        }
+      }
+
+      &--heading {
+        font-size: 2rem;
+      }
+
+      &--details {
+        font-size: 1.4rem;
+        text-align: center;
+        color: var(--color-grey-dark);
+      }
+    }
+  }
+}

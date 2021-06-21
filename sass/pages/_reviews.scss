@@ -1,0 +1,51 @@
+.reviews {
+  @include padding-big;
+
+  &-heading {
+    text-align: center;
+  }
+
+  &-text {
+    @include headertext;
+  }
+
+  &-element {
+    @include padding-medium;
+
+    @include autofit;
+    justify-items: center;
+
+    &-box {
+      @include flex;
+      flex-direction: column;
+      max-width: 25rem;
+
+      & > * {
+        margin: 0.5rem 0;
+      }
+
+      &--img {
+        width: 40%;
+
+        img {
+          width: 100%;
+          border-radius: 50%;
+        }
+      }
+
+      &--details {
+        font-size: 1.4rem;
+        text-align: center;
+      }
+
+      &--name {
+        font-size: 1.8rem;
+      }
+
+      &--text {
+        @include headertext;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

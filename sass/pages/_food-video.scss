@@ -1,0 +1,58 @@
+.food-video {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(../img/foods-you-love.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+
+  &__container {
+    grid-column: 6 / span 3;
+    grid-row: 2 / -1;
+    background-color: var(--color-white);
+    margin: 1rem;
+    border: 1px solid rgba(2, 2, 2, 0.2);
+    outline: 1rem solid var(--color-white);
+    padding: 2rem;
+
+    @media (max-width: 450px) {
+      margin: 0.5rem;
+      padding: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      grid-column: 4 / span 6;
+    }
+
+    @media (max-width: 600px) {
+      grid-column: 1 / -1;
+      grid-row: 3 / span 6;
+    }
+
+    @include flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &-heading {
+      font-size: 2rem;
+
+      @media (max-width: 450px) {
+        font-size: 1.7rem;
+      }
+    }
+    &-text {
+      font-size: 1.3rem;
+      color: var(--color-grey);
+    }
+
+    &-link {
+      font-size: 1.4rem;
+      padding: 1rem 2rem;
+
+      @media (max-width: 450px) {
+        padding: 1rem;
+      }
+    }
+  }
+}

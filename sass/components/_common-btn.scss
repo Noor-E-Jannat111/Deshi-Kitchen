@@ -1,0 +1,19 @@
+.common-btn {
+  display: inline-block;
+  font-size: 1.8rem;
+  font-family: var(--font-heading);
+  padding: 1.2rem 3rem;
+  color: var(--color-white);
+  background: var(--color-primary);
+  border: 1px solid transparent;
+  transition: 0.3s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    transform: translateY(-2px);
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 1px solid currentColor;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+  }
+}
